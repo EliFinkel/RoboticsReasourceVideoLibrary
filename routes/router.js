@@ -1,67 +1,27 @@
 const express = require('express');
 const router = express.Router();
 const videoModel = require('../models/videoModel');
+const controller = require('../controllers/videoController');
 
-
-router.get('/add', (req, res) => {
+router.get('/IAMREAL', (req, res) => {
     res.render('create');
 })
-router.post('/add', async(req, res) => {
-    let newVid = new videoModel(
-        {
-            title: req.body.title,
-            vidType: req.body.vidType,
-            url: req.body.url
-        }
-    );
 
-
-  
-    const videos = await videoModel.find();
-    for(var i = 0; i < videos.length; i++){
-        
-        if(newVid.url == videos[i].url){
-            
-            res.redirect('/add');
-            return;
-            
-        }
-    }
-
-    
-    newVid.save(function (err) {
-        if (err) {
-            return next(err);
-        }
-        console.log('Video Succesfully Added');
-        res.redirect('/add');
-
-       
-    })
-});
-
-router.get('/', async (req, res)=>{
-    const videos = await videoModel.find();
-    res.render('videos', {videos});
-
-
+/*
+router.get('/', (req, res) => {
+    res.render('create');
 })
+*/
 
-router.get('/deleteVideos', async(req,res)=>{
-    const videos = await videoModel.find();
-    res.render('delete', {videos});
-})
-router.post('/:id/delete', async (req, res, err) => {
-    videoModel.findByIdAndRemove(req.body.id, function (err) {
-        if (err) return next(err);
-        res.send('Deleted successfully!');
-    })
-     
-})
+router.get('/', controller.getVideoPage)
 
-router.delete('/deleteall', (req,res)=>{
-    videoModel.deleteMany();
-})
+router.post('/add',controller.addVideo);
+
+//router.get('/', async (req, res)=>{controller.findOneVid});
+router.get('/deleteVideos',controller.getDeletePage)
+router.post('/:id/delete', controller.deleteVideo);
+
+router.post('/search', controller.search);
 
 
 module.exports = router;

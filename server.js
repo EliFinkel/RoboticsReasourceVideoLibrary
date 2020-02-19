@@ -3,7 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-
+const alert = require('alert-node');
 const path = require('path');
 
 //hello world
@@ -19,6 +19,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 
 
 // Set up mongoose connection
@@ -47,8 +48,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-let port = process.env.PORT || 3000;
+
+let port = process.env.PORT || 5000;
 app.use(express.static(__dirname));
 app.listen(port, () => {
+
     console.log('Server is up and running on port number ' + port);
 });

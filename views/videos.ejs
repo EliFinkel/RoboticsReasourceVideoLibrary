@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Video Reasource</title>
+  <title>Video Resource</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -1393,7 +1393,15 @@
       
     }
    
-    
+    #searchItem{
+      border:1px solid rgb(71, 84, 136);
+      border-radius: 3%;
+    }
+
+    #searchBtn{
+      border-radius: 10%;
+      background: rgb(184, 184, 184);
+    }
     
     
     
@@ -1442,9 +1450,12 @@
               </div>
       
               
-      
-    
-            
+              <form action="/search" method="POST" class="ui form">
+                <input type="text" id = "searchItem" name = "searchItem"  for = "searchItem" placeholder="Search.." >
+                <input type="submit" class="button" id = "searchBtn">
+                
+              
+              </form>
                   <table class="w3-table-all"id = "table1">
                    
                     <%videos.forEach((video)=> {%>
