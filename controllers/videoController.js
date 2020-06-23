@@ -106,11 +106,16 @@ exports.login = async (req,res) => {
 
 
     if(loginInfo.username == "eli" && loginInfo.password == "vertigorobotics123"){
+        console.log("Correct");
         res.render('create');
 
+    }
+    else{
+        console.log("Incorrect");
+        res.redirect('/loginPage');
     }
 }
 
 exports.getLoginPage = async (req,res) => {
-    
+    res.render('login');
 }

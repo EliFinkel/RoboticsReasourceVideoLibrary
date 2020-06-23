@@ -3,9 +3,7 @@ const router = express.Router();
 const videoModel = require('../models/videoModel');
 const controller = require('../controllers/videoController');
 
-router.get('/IAMREAL', (req, res) => {
-    res.render('create');
-})
+
 
 /*
 router.get('/', (req, res) => {
@@ -25,7 +23,7 @@ router.post('/add',controller.addVideo);
 //router.post('/:id/delete', controller.deleteVideo);
 
 router.post('/search', controller.search);
-router.get('/login', controller.getLoginPage);
+router.get('/loginPage', controller.getLoginPage);
 router.post('/login', controller.login);
 
 module.exports = router;

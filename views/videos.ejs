@@ -1377,7 +1377,11 @@
    
     table,th,td,tr{
       
-    
+      display: inline-block;
+      position: relative;
+      margin-left: 0em;
+      margin-right: 0em;
+     
       
       
     }
@@ -1398,8 +1402,6 @@
       border-radius: 10%;
       background: rgb(184, 184, 184);
     }
-
-  
     
     
     
@@ -1414,8 +1416,7 @@
           <div id="logo" class="pull-left">
             <!-- Uncomment below if you prefer to use a text logo -->
             <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-            <a class="scrollto"><img src="../img/logo.png" alt="" title=""></a>
-            <!--<a class="scrollto"><img src="../img/226-2262876_first-illinois-robotics-1c-horizontal-reversed-first-tech.png" alt="" title=""></a>-->
+            <a href="https://www.facebook.com/FTCVertigo/" target = "_blank" class="scrollto"><img src="../img/logo.png" alt="" title=""></a>
           </div>
     
           <nav id="nav-menu-container">
@@ -1442,20 +1443,16 @@
               
           
            
-           <div class="container">
+            <div class="container">
               <div class="section-header">
                 <h2>Robotics Resource Videos</h2>
               <p>Learn More About Robotics Here!</p>
-              </div>-
-              <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-
-
+              </div>
       
-             
+              
               <form action="/search" method="POST" class="ui form">
                 <input type="text" id = "searchItem" name = "searchItem"  for = "searchItem" placeholder="Search.." >
-                
-                <input type="submit" class="button" id = "searchBtn" >
+                <input type="submit" class="button" id = "searchBtn">
                 
               
               </form>
@@ -1503,9 +1500,6 @@
       <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
     
       <!-- JavaScript Libraries -->
-      
-
-    
       <script src="../lib/jquery/jquery.min.js"></script>
       <script src="../lib/jquery/jquery-migrate.min.js"></script>
       <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
