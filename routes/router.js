@@ -13,15 +13,19 @@ router.get('/', (req, res) => {
 })
 */
 
+
+router.get('/login', controller.login);
+
 router.get('/', controller.getVideoPage)
 
 router.post('/add',controller.addVideo);
 
 //router.get('/', async (req, res)=>{controller.findOneVid});
-router.get('/deleteVideos',controller.getDeletePage)
-router.post('/:id/delete', controller.deleteVideo);
+//router.get('/deleteVideos',controller.getDeletePage)
+//router.post('/:id/delete', controller.deleteVideo);
 
 router.post('/search', controller.search);
-
+router.get('/login', controller.getLoginPage);
+router.post('/login', controller.login);
 
 module.exports = router;

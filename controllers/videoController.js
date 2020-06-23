@@ -93,3 +93,24 @@ exports.search =  async (req,res) => {
     
 
 }
+
+
+
+
+
+exports.login = async (req,res) => {
+    let loginInfo = {
+        username: req.body.username,
+        password: req.body.password
+    }
+
+
+    if(loginInfo.username == "eli" && loginInfo.password == "vertigorobotics123"){
+        res.render('create');
+
+    }
+}
+
+exports.getLoginPage = async (req,res) => {
+    
+}
