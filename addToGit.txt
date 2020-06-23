@@ -1,0 +1,4 @@
+git add .
+git commit -m "Updated Add Function"
+git push https://git.heroku.com/vertigovideolibrary.git master
+np

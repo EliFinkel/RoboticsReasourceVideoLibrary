@@ -22,6 +22,10 @@ exports.addVideo = async (req, res) => {
             return;
             
         }
+        else if(newVid.url == "" || newVid.title == ""){
+            alert('You Are Missing Something!');
+            res.redirect('/iAmReal');
+        }
     }
 
     
@@ -30,7 +34,7 @@ exports.addVideo = async (req, res) => {
             return next(err);
         }
         console.log('Video Succesfully Added');
-        res.redirect('/iAmReal');
+        res.redirect('/');
 
        
     })
@@ -58,6 +62,7 @@ exports.getDeletePage = async (req, res) => {
 
 
 
+
 exports.search =  async (req,res) => {
     var item = req.body.searchItem.toUpperCase();
     var words = item.split(" ");
@@ -71,7 +76,7 @@ exports.search =  async (req,res) => {
     var vids = [];
     for(var i = 0; i < videos.length; i++){
             
-        if(videos[i].title.charAt(0) == firstLetter || videos[i].title.charAt(0) == word2.charAt(0)){
+        if(videos[i].title.charAt(0) == firstLetter /*|| videos[i].title.charAt(0) == word2.charAt(0)*/){
             
             vids.push(videos[i]);
             

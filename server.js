@@ -49,7 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-let port = process.env.PORT || 5000;
+let port = process.env.PORT || 2000;
 app.use(express.static(__dirname));
 app.listen(port, () => {
 
